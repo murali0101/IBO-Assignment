@@ -66,3 +66,21 @@ const listOfProducts = [
       description: "Ceiling Fan",
     },
   ];
+
+    
+  // SOLUTION FOR PROBLEM 01:--------------------------------------------
+  
+  function getUniqueProductCount(data) {
+    let temp = {};
+    for (let i = 0; i < data.length; i++) {
+      if (temp[data[i].productName] == undefined) {
+        temp[data[i].productName] = 1;
+      } else {
+        temp[data[i].productName] = temp[data[i].productName] + 1;
+      }
+    }
+    return temp;
+  }
+  
+  console.log(getUniqueProductCount(listOfProducts))
+  
