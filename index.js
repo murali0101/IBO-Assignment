@@ -84,3 +84,24 @@ const listOfProducts = [
   
   console.log(getUniqueProductCount(listOfProducts))
   
+  // SOLUTION FOR PROBLEM 02:--------------------------------------------
+  
+  function getUniquePrducts(data) {
+    let temp = {},
+      result = [];
+    for (let i = 0; i < data.length; i++) {
+      if (temp[data[i].productName] == undefined) {
+        temp[data[i].productName] = data[i];
+      } else {
+        temp[data[i].productName].quantity =
+          temp[data[i].productName].quantity + data[i].quantity;
+      }
+    }
+    for (let key in temp) {
+      result.push(temp[key]);
+    }
+    return result;
+  }
+  
+  console.log(getUniquePrducts(listOfProducts));
+  
